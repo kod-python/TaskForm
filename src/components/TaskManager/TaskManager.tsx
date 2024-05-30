@@ -9,9 +9,9 @@ const TaskManager = () => {
   const [showModal1, setShowModal1] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
 
-  const [tasks, setTasks] = useState([]);
-  const [tasks1, setTasks1] = useState([]);
-  const [tasks2, setTasks2] = useState([]);
+  const [tasks, setTasks] = useState<string[]>([]);
+  const [tasks1, setTasks1] = useState<string[]>([]);
+  const [tasks2, setTasks2] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [inputValue1, setInputValue1] = useState("");
   const [inputValue2, setInputValue2] = useState("");
@@ -38,7 +38,7 @@ const TaskManager = () => {
     setEditingTaskIndex2(null);
   };
 
-  const handleButton = (e) => {
+  const handleButton = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (editingTaskIndex !== null) {
       const updatedTasks = tasks.map((task, index) =>
@@ -47,13 +47,14 @@ const TaskManager = () => {
       setTasks(updatedTasks);
       setEditingTaskIndex(null);
     } else {
-      setTasks([...tasks, inputValue]);
+      setTasks((tasks)=>[...tasks, inputValue]);
+      //  setItems((prevItems) => [...prevItems, inputValue]);
     }
     setInputValue("");
     setShowModal(false);
   };
 
-  const handleButton1 = (e) => {
+  const handleButton1 = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (editingTaskIndex1 !== null) {
       const updatedTasks1 = tasks1.map((task1, index) =>
@@ -62,13 +63,13 @@ const TaskManager = () => {
       setTasks1(updatedTasks1);
       setEditingTaskIndex1(null);
     } else {
-      setTasks1([...tasks1, inputValue1]);
+      setTasks1((tasks1)=>[...tasks1, inputValue1]);
     }
     setInputValue1("");
     setShowModal1(false);
   };
 
-  const handleButton2 = (e) => {
+  const handleButton2 = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (editingTaskIndex2 !== null) {
       const updatedTasks2 = tasks2.map((task2, index) =>
@@ -77,58 +78,69 @@ const TaskManager = () => {
       setTasks2(updatedTasks2);
       setEditingTaskIndex2(null);
     } else {
-      setTasks2([...tasks2, inputValue2]);
+      setTasks2((tasks2)=>[...tasks2, inputValue2]);
     }
     setInputValue2("");
     setShowModal2(false);
   };
 
-  const handleEdit = (index) => {
+  const handleEdit = (index:any) => {
     setEditingTaskIndex(index);
     setInputValue(tasks[index]);
     setShowModal(true);
   };
 
-  const handleEdit1 = (index) => {
+
+// trial
+
+
+// trial
+
+
+
+
+
+
+  const handleEdit1 = (index:any) => {
     setEditingTaskIndex1(index);
     setInputValue1(tasks[index]);
     setShowModal1(true);
   };
 
-  const handleEdit2 = (index) => {
+  const handleEdit2 = (index:any) => {
     setEditingTaskIndex2(index);
     setInputValue2(tasks[index]);
     setShowModal2(true);
   };
 
-  const handleDelete = (index) => {
+  const handleDelete = (index:any) => {
     const updatedTasks = tasks.filter((_, taskIndex) => taskIndex !== index);
     setTasks(updatedTasks);
   };
 
-  const handleDelete1 = (index) => {
+  const handleDelete1 = (index:any) => {
     const updatedTasks1 = tasks1.filter(
       (_, taskIndex1) => taskIndex1 !== index
     );
     setTasks1(updatedTasks1);
   };
 
-  const handleDelete2 = (index) => {
+  const handleDelete2 = (index:any) => {
     const updatedTasks2 = tasks2.filter(
       (_, taskIndex2) => taskIndex2 !== index
     );
     setTasks2(updatedTasks2);
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
-  const handleInputChange1 = (e) => {
+  const handleInputChange1 = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue1(e.target.value);
   };
 
-  const handleInputChange2 = (e) => {
+  const handleInputChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue2(e.target.value);
   };
 
@@ -138,7 +150,7 @@ const TaskManager = () => {
         MY FORM TASK PAGE
       </h1>
       <div className=" flex  items-center  gap-4 w-[200px] h-[200px] pl-[300px] ">
-        <div className="card-body rounded bg-gray-500 flex  items-center gap-4 p-[100px]">
+        <div className="card-body rounded bg-gray-300 flex  items-center gap-4 p-[100px]">
           <h1 className="text-[2rem] text-white font-bold mt-[-80px]">Today</h1>
 
           <ul className="mt-[80px]">
@@ -148,10 +160,16 @@ const TaskManager = () => {
                   {task}
                 </span>
                 <div className="flex items-center gap-4 pl-[20px]">
-                  <button onClick={() => handleEdit(index)} className="text-green-500">
-                    <FaEdit size={30}/>
+                  <button
+                    onClick={() => handleEdit(index)}
+                    className="text-green-500"
+                  >
+                    <FaEdit size={30} />
                   </button>
-                  <button onClick={() => handleDelete(index)} className="text-green-500">
+                  <button
+                    onClick={() => handleDelete(index)}
+                    className="text-green-500"
+                  >
                     <MdDeleteForever size={30} />
                   </button>
                 </div>
@@ -170,7 +188,7 @@ const TaskManager = () => {
         </div>
 
         {/* progress */}
-        <div className="card-body rounded bg-gray-500 flex items-center gap-4 p-[100px]">
+        <div className="card-body rounded bg-gray-300 flex items-center gap-4 p-[100px]">
           <h1 className="text-[2rem] text-white font-bold  mt-[-80px]">
             Progress
           </h1>
@@ -182,10 +200,16 @@ const TaskManager = () => {
                   {task1}
                 </span>
                 <div className="flex items-center gap-4 pl-[20px]">
-                  <button onClick={() => handleEdit1(index1)} className="text-green-500">
+                  <button
+                    onClick={() => handleEdit1(index1)}
+                    className="text-green-500"
+                  >
                     <FaEdit size={30} />
                   </button>
-                  <button onClick={() => handleDelete1(index1)} className="text-green-500">
+                  <button
+                    onClick={() => handleDelete1(index1)}
+                    className="text-green-500"
+                  >
                     <MdDeleteForever size={30} />
                   </button>
                 </div>
@@ -204,7 +228,7 @@ const TaskManager = () => {
         </div>
 
         {/* complete */}
-        <div className="card-body rounded bg-gray-500 flex items-center gap-4 p-[100px]">
+        <div className="card-body rounded bg-gray-300 flex items-center gap-4 p-[100px]">
           <h1 className="text-[2rem] text-white font-bold  mt-[-80px]">
             Complete
           </h1>
@@ -216,10 +240,16 @@ const TaskManager = () => {
                   {task2}
                 </span>
                 <div className="flex items-center gap-4 pl-[20px]">
-                  <button onClick={() => handleEdit2(index2)} className="text-green-500">
+                  <button
+                    onClick={() => handleEdit2(index2)}
+                    className="text-green-500"
+                  >
                     <FaEdit size={30} />
                   </button>
-                  <button onClick={() => handleDelete2(index2)} className="text-green-500">
+                  <button
+                    onClick={() => handleDelete2(index2)}
+                    className="text-green-500"
+                  >
                     <MdDeleteForever size={30} />
                   </button>
                 </div>
