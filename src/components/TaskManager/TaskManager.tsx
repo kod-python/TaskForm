@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Modal from "../Modal/Modal";
-import { MdDeleteForever } from "react-icons/md";
-import { FaEdit } from "react-icons/fa";
+// import { MdDeleteForever } from "react-icons/md";
+// import { FaEdit } from "react-icons/fa";
 
 const TaskManager = () => {
   const [showModal, setShowModal] = useState(false);
@@ -170,17 +170,17 @@ const TaskManager = () => {
                 <div className="flex items-center gap-4 pl-[20px]">
                   <button
                     onClick={() => handleEdit(index)}
-                    className="text-green-500 "
+                    className="text-green-500 btn"
                   >
-                   
-                    <FaEdit size={30} />
+                   Edit
+                    {/* <FaEdit size={30} /> */}
                   </button>
                   <button
                     onClick={() => handleDelete(index)}
-                    className="text-green-500 "
+                    className="text-green-500 btn"
                   >
-                   
-                    <MdDeleteForever size={30} />
+                   Delete
+                    {/* <MdDeleteForever size={30} /> */}
                   </button>
                 </div>
               </li>
@@ -212,16 +212,18 @@ const TaskManager = () => {
                 <div className="flex items-center gap-4 pl-[20px]">
                   <button
                     onClick={() => handleEdit1(index1)}
-                    className="text-green-500"
+                    className="text-green-500 btn"
                   >
+                    Edit
                     
-                    <FaEdit size={30} />
+                    {/* <FaEdit size={30} /> */}
                   </button>
                   <button
                     onClick={() => handleDelete1(index1)}
-                    className="text-green-500"
+                    className="text-green-500 btn"
                   >
-                    <MdDeleteForever size={30} />
+                    Delete
+                    {/* <MdDeleteForever size={30} /> */}
                   </button>
                 </div>
               </li>
@@ -253,15 +255,17 @@ const TaskManager = () => {
                 <div className="flex items-center gap-4 pl-[20px]">
                   <button
                     onClick={() => handleEdit2(index2)}
-                    className="text-green-500"
+                    className="text-green-500 btn"
                   >
-                    <FaEdit size={30} />
+                    Edit
+                    {/* <FaEdit size={30} /> */}
                   </button>
                   <button
                     onClick={() => handleDelete2(index2)}
-                    className="text-green-500"
+                    className="text-green-500 btn"
                   >
-                    <MdDeleteForever size={30} />
+                    Delete
+                    {/* <MdDeleteForever size={30} /> */}
                   </button>
                 </div>
               </li>
