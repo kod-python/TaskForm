@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Modal from "../Modal/Modal";
+import { MdDeleteForever } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
 
 const TaskManager = () => {
   const [showModal, setShowModal] = useState(false);
@@ -146,14 +148,11 @@ const TaskManager = () => {
                   {task}
                 </span>
                 <div className="flex items-center gap-4 pl-[20px]">
-                  <button
-                    onClick={() => handleEdit(index)}
-                    className="btn w-[80px]"
-                  >
-                    Edit
+                  <button onClick={() => handleEdit(index)} className="text-green-500">
+                    <FaEdit size={30}/>
                   </button>
-                  <button onClick={() => handleDelete(index)} className="btn">
-                    Delete
+                  <button onClick={() => handleDelete(index)} className="text-green-500">
+                    <MdDeleteForever size={30} />
                   </button>
                 </div>
               </li>
@@ -183,14 +182,11 @@ const TaskManager = () => {
                   {task1}
                 </span>
                 <div className="flex items-center gap-4 pl-[20px]">
-                  <button
-                    onClick={() => handleEdit1(index1)}
-                    className="btn w-[80px]"
-                  >
-                    Edit
+                  <button onClick={() => handleEdit1(index1)} className="text-green-500">
+                    <FaEdit size={30} />
                   </button>
-                  <button onClick={() => handleDelete1(index1)} className="btn">
-                    Delete
+                  <button onClick={() => handleDelete1(index1)} className="text-green-500">
+                    <MdDeleteForever size={30} />
                   </button>
                 </div>
               </li>
@@ -220,14 +216,11 @@ const TaskManager = () => {
                   {task2}
                 </span>
                 <div className="flex items-center gap-4 pl-[20px]">
-                  <button
-                    onClick={() => handleEdit2(index2)}
-                    className="btn w-[80px]"
-                  >
-                    Edit
+                  <button onClick={() => handleEdit2(index2)} className="text-green-500">
+                    <FaEdit size={30} />
                   </button>
-                  <button onClick={() => handleDelete2(index2)} className="btn">
-                    Delete
+                  <button onClick={() => handleDelete2(index2)} className="text-green-500">
+                    <MdDeleteForever size={30} />
                   </button>
                 </div>
               </li>
