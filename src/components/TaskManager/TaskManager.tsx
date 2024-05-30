@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Modal from "../Modal/Modal";
 // import { MdDeleteForever } from "react-icons/md";
-import { FaEdit } from "react-icons/fa";
+// import { FaEdit } from "react-icons/fa";
 
 const TaskManager = () => {
   const [showModal, setShowModal] = useState(false);
@@ -172,7 +172,7 @@ const TaskManager = () => {
                     onClick={() => handleEdit(index)}
                     className="text-green-500"
                   >
-                    <FaEdit size={30} />
+                    {/* <FaEdit size={30} /> */}
                   </button>
                   <button
                     onClick={() => handleDelete(index)}
@@ -212,7 +212,7 @@ const TaskManager = () => {
                     onClick={() => handleEdit1(index1)}
                     className="text-green-500"
                   >
-                    <FaEdit size={30} />
+                    {/* <FaEdit size={30} /> */}
                   </button>
                   <button
                     onClick={() => handleDelete1(index1)}
@@ -252,7 +252,7 @@ const TaskManager = () => {
                     onClick={() => handleEdit2(index2)}
                     className="text-green-500"
                   >
-                    <FaEdit size={30} />
+                    {/* <FaEdit size={30} /> */}
                   </button>
                   <button
                     onClick={() => handleDelete2(index2)}
