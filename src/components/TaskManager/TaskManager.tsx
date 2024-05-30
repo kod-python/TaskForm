@@ -38,7 +38,7 @@ const TaskManager = () => {
     setEditingTaskIndex2(null);
   };
 
-  const handleButton = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleButton: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     if (editingTaskIndex !== null) {
       const updatedTasks = tasks.map((task, index) =>
@@ -54,7 +54,7 @@ const TaskManager = () => {
     setShowModal(false);
   };
 
-  const handleButton1 = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleButton1: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     if (editingTaskIndex1 !== null) {
       const updatedTasks1 = tasks1.map((task1, index) =>
@@ -69,7 +69,15 @@ const TaskManager = () => {
     setShowModal1(false);
   };
 
-  const handleButton2 = (e: React.MouseEvent<HTMLButtonElement>) => {
+
+
+  // const handleButton2: React.FormEventHandler<HTMLFormElement> = (event) => {
+  //   event.preventDefault();
+  //   // Handle form submission logic here
+  // };
+
+
+  const handleButton2: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     if (editingTaskIndex2 !== null) {
       const updatedTasks2 = tasks2.map((task2, index) =>
