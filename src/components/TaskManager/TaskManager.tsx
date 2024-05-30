@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Modal from "../Modal/Modal";
-import { MdDeleteForever } from "react-icons/md";
+// import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 
 const TaskManager = () => {
@@ -178,7 +178,7 @@ const TaskManager = () => {
                     onClick={() => handleDelete(index)}
                     className="text-green-500"
                   >
-                    <MdDeleteForever size={30} />
+                    {/* <MdDeleteForever size={30} /> */}
                   </button>
                 </div>
               </li>
@@ -218,7 +218,7 @@ const TaskManager = () => {
                     onClick={() => handleDelete1(index1)}
                     className="text-green-500"
                   >
-                    <MdDeleteForever size={30} />
+                    {/* <MdDeleteForever size={30} /> */}
                   </button>
                 </div>
               </li>
@@ -258,7 +258,7 @@ const TaskManager = () => {
                     onClick={() => handleDelete2(index2)}
                     className="text-green-500"
                   >
-                    <MdDeleteForever size={30} />
+                    {/* <MdDeleteForever size={30} /> */}
                   </button>
                 </div>
               </li>
